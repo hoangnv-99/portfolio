@@ -59,7 +59,7 @@ ls .claude/skills | grep my-skill   # phải thấy my-skill, tức là Claude C
 
 ---
 
-## 3. Cách 2: Thêm skill bằng lệnh `npx skills add`
+## 3. Cách 2: Thêm skill bằng lệnh `pnpm dlx skills add`
 
 **Bước 1. Mở terminal ở thư mục dự án:**
 
@@ -70,7 +70,7 @@ cd /Volumes/DataSSD/projects/personal/portfolio
 **Bước 2. Chạy lệnh cài**, ví dụ:
 
 ```sh
-npx skills add vercel-labs/agent-skills
+pnpm dlx skills add vercel-labs/agent-skills
 ```
 
 **Bước 3. Trả lời các câu hỏi của công cụ.** Tên câu hỏi có thể khác nhau tùy phiên bản.
@@ -103,7 +103,7 @@ ls -la .agents/skills/ | grep <ten-skill>
 
 ```sh
 rm .agents/skills/<ten-skill>     # xóa link hỏng (chỉ dùng rm, không cần -rf)
-npx skills add <repo>             # cài lại, lần này bỏ chọn Claude Code
+pnpm dlx skills add <repo>        # cài lại, lần này bỏ chọn Claude Code
 ```
 
 ---
@@ -149,4 +149,4 @@ git config --global core.symlinks true
 
 ## 7. Tóm tắt
 
-> Luôn thêm skill và rule vào **`.agents/`**, không cần làm gì với `.claude/`. Khi cài bằng `npx skills add`, nhớ **bỏ chọn Claude Code**.
+> Luôn thêm skill và rule vào **`.agents/`**, không cần làm gì với `.claude/`. Khi cài bằng `pnpm dlx skills add`, nhớ **bỏ chọn Claude Code**.

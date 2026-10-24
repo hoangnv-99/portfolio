@@ -1,5 +1,5 @@
 // One-off: captures the live project sites used as card thumbnails.
-// Usage: npm run screenshots   (uses the locally installed Google Chrome)
+// Usage: pnpm screenshots   (uses the locally installed Google Chrome)
 import { chromium } from "playwright";
 import { en } from "../src/content/en.ts";
 
