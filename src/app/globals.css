@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Picto design system — values from Figma variables (file U8h4uCrHfJ3NNzPjJT1knz) */
+@theme {
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-500: #a53dff;
+  --color-primary-900: #210c33;
+  --color-primary-tint: rgb(237 216 255 / 0.5);
+
+  --color-gray-50: #f0f1f3;
+  --color-gray-100: #e6e8eb;
+  --color-gray-200: #c3c7ce;
+  --color-gray-300: #b8bcc2;
+  --color-gray-400: #87909d;
+  --color-gray-500: #697484;
+  --color-gray-600: #556070;
+  --color-gray-700: #424e60;
+  --color-gray-800: #2b384c;
+  --color-gray-900: #132238;
+
+  --text-display: 72px;
+  --text-display--line-height: 84px;
+  --text-h1: 48px;
+  --text-h1--line-height: 56px;
+  --text-h2: 38px;
+  --text-h2--line-height: 50px;
+  --text-h3: 32px;
+  --text-h3--line-height: 40px;
+  --text-h4: 24px;
+  --text-h4--line-height: 1;
+  --text-h5: 20px;
+  --text-h5--line-height: 24px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 24px;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-small: 14px;
+  --text-small--line-height: 20px;
+  --text-thin: 12px;
+  --text-thin--line-height: 16px;
+
+  --shadow-card: 0 12px 32px rgb(28 25 25 / 0.12);
+  --shadow-card-lg: 0 32px 96px rgb(28 25 25 / 0.16);
+  --shadow-process: 32px 32px 62px rgb(43 56 76 / 0.1);
+  --shadow-photo: 0 24px 116px rgb(43 56 76 / 0.09);
+}
+
+/* Semantic tokens: light follows Figma; dark only reuses Figma palette values */
+:root {
+  --bg: #ffffff;
+  --bg-alt: var(--color-gray-50);
+  --surface: #ffffff;
+  --fg: var(--color-gray-900);
+  --fg-soft: var(--color-gray-700);
+  --muted: var(--color-gray-600);
+  --subtle: var(--color-gray-400);
+  --line: var(--color-gray-100);
+  --tint: var(--color-primary-tint);
+  --band: var(--color-gray-900);
+  --footer: var(--color-gray-800);
+}
+
+.dark {
+  --bg: var(--color-gray-900);
+  --bg-alt: #0e1a2c;
+  --surface: var(--color-gray-800);
+  --fg: var(--color-gray-50);
+  --fg-soft: var(--color-gray-100);
+  --muted: var(--color-gray-300);
+  --subtle: var(--color-gray-400);
+  --line: var(--color-gray-700);
+  --tint: rgb(165 61 255 / 0.16);
+  --band: var(--color-gray-800);
+  --footer: #0e1a2c;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-soft: var(--fg-soft);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-tint: var(--tint);
+  --color-band: var(--band);
+  --color-footer: var(--footer);
+}
+
+/* Figma content column: 1320px wide, 16px gutter on phones, 32px from md */
+@utility container-page {
+  --gutter: 16px;
+  width: 100%;
+  max-width: calc(1320px + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  @media (width >= 48rem) {
+    --gutter: 32px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Tinted icons: lets single-color Figma SVGs follow currentColor */
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+/* Scroll reveal: only hides content once JS has marked <html class="js"> */
+.js [data-reveal] {
+  opacity: 0;
+  translate: 0 24px;
+  transition:
+    opacity 600ms ease-out,
+    translate 600ms ease-out;
+}
+.js [data-reveal][data-visible] {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
