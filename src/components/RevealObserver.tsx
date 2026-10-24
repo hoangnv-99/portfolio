@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 
-// One observer for every [data-reveal] element on the page.
 export function RevealObserver() {
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -3,7 +3,6 @@ import { profile } from "@/content/profile";
 import { ButtonLink } from "./ui/ButtonLink";
 import { Icon } from "./ui/Icon";
 
-// Figma "Contact" (135:875): heading block + "Address Card"s.
 export function Contact({ dict }: { dict: Dictionary }) {
   const { labels } = dict.contact;
   const cards = [
@@ -24,11 +23,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id="contact" className="py-20 lg:py-[100px]">
+    <section id="contact" className="py-14 lg:py-20">
       <div className="container-page">
         <div
           data-reveal
-          className="grid gap-10 rounded-xl bg-surface p-6 shadow-card md:p-12 lg:grid-cols-[minmax(0,481px)_minmax(0,1fr)] lg:gap-16 lg:p-[88px]"
+          className="grid gap-10 rounded-xl bg-surface p-6 shadow-card md:p-12 lg:grid-cols-[minmax(0,481px)_minmax(0,1fr)] lg:gap-12 lg:p-14"
         >
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">

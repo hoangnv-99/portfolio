@@ -2,14 +2,11 @@ import type { Dictionary } from "@/content/types";
 import { Icon } from "./ui/Icon";
 import { SectionHeading } from "./ui/SectionHeading";
 
-// Layout and cards follow Figma "Work Process" (135:778).
 export function Skills({ dict }: { dict: Dictionary }) {
   const { education } = dict.skills;
 
   return (
-    // overflow-clip (not hidden) so the sticky column still sticks to the viewport
-    <section id="skills" className="relative overflow-clip py-20 lg:py-[124px]">
-      {/* Figma "Blog" (135:812) BG ellipses: purple top-left, mint right; same gradients as Hero */}
+    <section id="skills" className="relative overflow-clip py-14 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 opacity-100 dark:opacity-40"
@@ -18,8 +15,8 @@ export function Skills({ dict }: { dict: Dictionary }) {
         <div className="absolute top-1/3 -right-96 size-[1044px] rounded-full bg-[radial-gradient(circle,rgb(196_245_233/0.448),transparent_65%)]" />
       </div>
 
-      <div className="container-page grid gap-12 lg:grid-cols-[minmax(0,529px)_minmax(0,648px)] lg:items-start lg:justify-between">
-        <div className="flex flex-col gap-10 lg:sticky lg:top-40 lg:self-start">
+      <div className="container-page grid gap-10 lg:grid-cols-[minmax(0,529px)_minmax(0,648px)] lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-8 lg:sticky lg:top-40 lg:self-start">
           <SectionHeading
             title={dict.skills.heading}
             subtitle={dict.skills.subheading}

@@ -17,7 +17,7 @@ export function ProjectGrid({ labels }: { labels: Labels }) {
 
   return (
     <>
-      <div role="group" className="mt-10 flex flex-wrap justify-center gap-2">
+      <div role="group" className="mt-8 flex flex-wrap justify-center gap-2">
         {filters.map((f) => {
           const count =
             f === "all" ? labels.items.length : labels.items.filter((p) => p.category === f).length;
@@ -40,7 +40,7 @@ export function ProjectGrid({ labels }: { labels: Labels }) {
         })}
       </div>
 
-      <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((project) => (
           <li
             key={project.slug}

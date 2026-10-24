@@ -2,7 +2,6 @@ import type { Dictionary } from "@/content/types";
 import { homeHref, navLinks } from "./Header";
 import { Logo } from "./Logo";
 
-// Figma "Footer" (135:744).
 export function Footer({ dict }: { dict: Dictionary }) {
   return (
     <footer className="bg-footer py-8">
@@ -10,7 +9,11 @@ export function Footer({ dict }: { dict: Dictionary }) {
         <Logo href={homeHref(dict)} inverted />
         <nav className="flex flex-wrap justify-center" aria-label="Footer">
           {[...navLinks(dict), { href: "#contact", label: dict.nav.contact }].map((link) => (
-            <a key={link.href} href={link.href} className="p-3 text-body text-gray-50 hover:text-primary-500">
+            <a
+              key={link.href}
+              href={link.href}
+              className="p-3 text-body text-gray-50 hover:text-primary-500"
+            >
               {link.label}
             </a>
           ))}
