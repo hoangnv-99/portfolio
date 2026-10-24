@@ -1,7 +1,6 @@
 // Locale-independent facts copied from the CV PDF.
 export const profile = {
   name: "Nguyen Vu Hoang",
-  logoInitial: "H",
   logoText: "Vu Hoang",
   email: "ngvhoang6886@gmail.com",
   phone: "0964499158",

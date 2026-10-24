@@ -23,7 +23,7 @@ export function Header({ dict }: { dict: Dictionary }) {
     "px-4 py-3 text-body font-medium text-fg-soft transition-colors hover:text-primary-500 xl:px-6";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/0 bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/75">
+    <header className="sticky top-0 z-50 border-b border-line/0 shadow-[0_4px_20px_rgb(28_25_25/0.06)] bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/75">
       <div className="container-page relative flex h-[72px] items-center justify-between lg:h-24">
         <Logo href={homeHref(dict)} />
 

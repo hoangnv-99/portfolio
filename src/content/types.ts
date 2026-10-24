@@ -7,12 +7,15 @@ export type Project = {
   name: string;
   url: string;
   category: ProjectCategory;
+  // Every field is required so each project keeps the full structure;
+  // leave "" or [] when unknown and the UI hides it.
+  tagline: string;
   description: string;
-  period?: string;
-  role?: string;
-  teamSize?: string;
-  responsibilities?: string[];
-  tech?: string[];
+  period: string;
+  role: string;
+  teamSize: string;
+  responsibilities: string[];
+  tech: string[];
 };
 
 export type ExperienceRole = {
@@ -61,6 +64,9 @@ export type Dictionary = {
     role: string;
     teamSize: string;
     responsibilities: string;
+    tech: string;
+    details: string;
+    close: string;
     visit: string;
     items: Project[];
   };

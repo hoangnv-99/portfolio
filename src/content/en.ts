@@ -1,16 +1,4 @@
-import type { Dictionary, Project } from "./types";
-
-// Shared by the six provincial tourism sites. The CV lists only their URLs,
-// so role/tech/period stay empty until confirmed.
-// TODO: confirm role, period and tech stack for each tourism site.
-const tourismSite = (slug: string, domain: string): Project => ({
-  slug,
-  name: domain,
-  url: `https://${domain}`,
-  category: "tourism",
-  description:
-    "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
-});
+import type { Dictionary } from "./types";
 
 export const en = {
   locale: "en",
@@ -55,14 +43,18 @@ export const en = {
     period: "Duration",
     role: "Role",
     teamSize: "Team size",
-    responsibilities: "Responsibilities",
-    visit: "Visit site",
+    responsibilities: "What I did",
+    tech: "Tech stack",
+    details: "View details",
+    close: "Close",
+    visit: "Open website",
     items: [
       {
         slug: "visitnghean",
         name: "visitvietnams & visitnghean.gov.vn",
         url: "https://visitnghean.gov.vn",
         category: "tourism",
+        tagline: "High-performance, SEO-optimized tourism portal system",
         description:
           "Developed tourism portal systems, providing destination information, SEO optimization. The systems were built with a focus on high performance and asynchronous processing.",
         period: "02/2025 – 02/2026",
@@ -80,10 +72,12 @@ export const en = {
         name: "chefstore.vn",
         url: "https://chefstore.vn",
         category: "ecommerce",
+        tagline: "E-commerce storefront with an admin panel",
         description:
           "Developed an e-commerce website system, including both the customer-facing storefront and the admin panel, supporting product management, order processing.",
         period: "04/2023 – 12/2023",
         role: "Fullstack Developer",
+        teamSize: "",
         responsibilities: [
           "Built the Admin Panel with key features: User management, Product management, Order,...",
           "Developed features to support SEO content management.",
@@ -94,12 +88,90 @@ export const en = {
         ],
         tech: ["PHP", "HTML", "CSS", "JavaScript", "Bootstrap", "ViettelPost", "VNPay", "MoMo", "reCAPTCHA"],
       },
-      tourismSite("qnta", "qnta.vn"),
-      tourismSite("dulichphutho", "dulichphutho.gov.vn"),
-      tourismSite("dulichbacninh", "dulichbacninh.gov.vn"),
-      tourismSite("hpta", "hpta.vn"),
-      tourismSite("haiphongnews", "haiphongnews.gov.vn"),
-      tourismSite("duonglamvillage", "duonglamvillage.com"),
+      {
+        // TODO: fill in tagline, period, role, team size, what I did, tech stack.
+        slug: "qnta",
+        name: "qnta.vn",
+        url: "https://qnta.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: fill in tagline, period, role, team size, what I did, tech stack.
+        slug: "dulichphutho",
+        name: "dulichphutho.gov.vn",
+        url: "https://dulichphutho.gov.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: fill in tagline, period, role, team size, what I did, tech stack.
+        slug: "dulichbacninh",
+        name: "dulichbacninh.gov.vn",
+        url: "https://dulichbacninh.gov.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: fill in tagline, period, role, team size, what I did, tech stack.
+        slug: "hpta",
+        name: "hpta.vn",
+        url: "https://hpta.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: fill in tagline, period, role, team size, what I did, tech stack.
+        slug: "haiphongnews",
+        name: "haiphongnews.gov.vn",
+        url: "https://haiphongnews.gov.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: fill in tagline, period, role, team size, what I did, tech stack.
+        slug: "duonglamvillage",
+        name: "duonglamvillage.com",
+        url: "https://duonglamvillage.com",
+        category: "tourism",
+        tagline: "",
+        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
     ],
   },
   experience: {

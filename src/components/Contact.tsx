@@ -7,10 +7,20 @@ import { Icon } from "./ui/Icon";
 export function Contact({ dict }: { dict: Dictionary }) {
   const { labels } = dict.contact;
   const cards = [
-    { icon: "/icons/mail.svg", label: labels.email, value: profile.email, href: `mailto:${profile.email}` },
-    { icon: "/figma/phone-call.svg", label: labels.phone, value: profile.phone, href: `tel:${profile.phone}` },
     { icon: "/figma/location-pin.svg", label: labels.address, value: dict.contact.address },
     { icon: "/icons/calendar.svg", label: labels.birthday, value: profile.birthday },
+    {
+      icon: "/figma/phone-call.svg",
+      label: labels.phone,
+      value: profile.phone,
+      href: `tel:${profile.phone}`,
+    },
+    {
+      icon: "/icons/mail.svg",
+      label: labels.email,
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+    },
   ];
 
   return (
@@ -22,7 +32,9 @@ export function Contact({ dict }: { dict: Dictionary }) {
         >
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
-              <h2 className="text-[32px] leading-10 font-semibold text-fg md:text-h2 md:leading-[50px]">{dict.contact.heading}</h2>
+              <h2 className="text-[32px] leading-10 font-semibold text-fg md:text-h2 md:leading-[50px]">
+                {dict.contact.heading}
+              </h2>
               <p className="text-body-lg text-subtle">{dict.contact.body}</p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -35,15 +47,15 @@ export function Contact({ dict }: { dict: Dictionary }) {
             </div>
           </div>
 
-          <ul className="grid content-center gap-3 sm:grid-cols-2">
+          <ul className="grid content-center gap-3">
             {cards.map((card) => {
               const valueClass = "text-body font-medium break-all text-fg";
               return (
                 <li
                   key={card.label}
-                  className="group flex first:sm:col-span-2 items-center gap-[13px] rounded-[10px] bg-surface p-6 transition-shadow hover:shadow-card dark:hover:bg-bg-alt"
+                  className="group flex items-center gap-[13px] rounded-[10px] bg-surface p-6 transition-shadow hover:shadow-card dark:hover:bg-bg-alt"
                 >
-                  <span className="rounded-[4px] bg-tint p-3 text-primary-500 transition-colors group-hover:bg-primary-500 group-hover:text-white">
+                  <span className="rounded-[6px] bg-tint p-3 text-primary-500 transition-colors group-hover:bg-primary-500 group-hover:text-white">
                     <Icon src={card.icon} />
                   </span>
                   <span className="flex min-w-0 flex-col gap-1">

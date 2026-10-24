@@ -114,6 +114,11 @@ body {
   color: var(--fg);
 }
 
+/* Stop the page scrolling behind an open modal dialog */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 /* Tinted icons: lets single-color Figma SVGs follow currentColor */
 .icon {
   display: inline-block;

@@ -1,14 +1,4 @@
-import type { Dictionary, Project } from "./types";
-
-// Sáu website du lịch cấp tỉnh: CV chỉ ghi URL nên để trống vai trò/công nghệ/thời gian.
-// TODO: xác nhận vai trò, thời gian và công nghệ cho từng website du lịch.
-const tourismSite = (slug: string, domain: string): Project => ({
-  slug,
-  name: domain,
-  url: `https://${domain}`,
-  category: "tourism",
-  description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
-});
+import type { Dictionary } from "./types";
 
 export const vi = {
   locale: "vi",
@@ -53,14 +43,18 @@ export const vi = {
     period: "Thời gian",
     role: "Vai trò",
     teamSize: "Quy mô đội",
-    responsibilities: "Trách nhiệm",
-    visit: "Xem website",
+    responsibilities: "Phần tôi làm",
+    tech: "Công nghệ",
+    details: "Xem chi tiết",
+    close: "Đóng",
+    visit: "Mở trang web",
     items: [
       {
         slug: "visitnghean",
         name: "visitvietnams & visitnghean.gov.vn",
         url: "https://visitnghean.gov.vn",
         category: "tourism",
+        tagline: "Hệ thống cổng thông tin du lịch hiệu năng cao, tối ưu SEO",
         description:
           "Phát triển các hệ thống cổng thông tin du lịch, cung cấp thông tin điểm đến và tối ưu SEO. Hệ thống được xây dựng chú trọng hiệu năng cao và xử lý bất đồng bộ.",
         period: "02/2025 – 02/2026",
@@ -78,10 +72,12 @@ export const vi = {
         name: "chefstore.vn",
         url: "https://chefstore.vn",
         category: "ecommerce",
+        tagline: "Website thương mại điện tử kèm trang quản trị",
         description:
           "Phát triển hệ thống website thương mại điện tử gồm cả trang bán hàng cho khách và trang quản trị, hỗ trợ quản lý sản phẩm và xử lý đơn hàng.",
         period: "04/2023 – 12/2023",
         role: "Fullstack Developer",
+        teamSize: "",
         responsibilities: [
           "Xây dựng trang quản trị với các chức năng chính: quản lý người dùng, sản phẩm, đơn hàng,...",
           "Phát triển tính năng hỗ trợ quản lý nội dung SEO.",
@@ -92,12 +88,90 @@ export const vi = {
         ],
         tech: ["PHP", "HTML", "CSS", "JavaScript", "Bootstrap", "ViettelPost", "VNPay", "MoMo", "reCAPTCHA"],
       },
-      tourismSite("qnta", "qnta.vn"),
-      tourismSite("dulichphutho", "dulichphutho.gov.vn"),
-      tourismSite("dulichbacninh", "dulichbacninh.gov.vn"),
-      tourismSite("hpta", "hpta.vn"),
-      tourismSite("haiphongnews", "haiphongnews.gov.vn"),
-      tourismSite("duonglamvillage", "duonglamvillage.com"),
+      {
+        // TODO: bổ sung tagline, thời gian, vai trò, quy mô đội, phần tôi làm, công nghệ.
+        slug: "qnta",
+        name: "qnta.vn",
+        url: "https://qnta.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: bổ sung tagline, thời gian, vai trò, quy mô đội, phần tôi làm, công nghệ.
+        slug: "dulichphutho",
+        name: "dulichphutho.gov.vn",
+        url: "https://dulichphutho.gov.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: bổ sung tagline, thời gian, vai trò, quy mô đội, phần tôi làm, công nghệ.
+        slug: "dulichbacninh",
+        name: "dulichbacninh.gov.vn",
+        url: "https://dulichbacninh.gov.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: bổ sung tagline, thời gian, vai trò, quy mô đội, phần tôi làm, công nghệ.
+        slug: "hpta",
+        name: "hpta.vn",
+        url: "https://hpta.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: bổ sung tagline, thời gian, vai trò, quy mô đội, phần tôi làm, công nghệ.
+        slug: "haiphongnews",
+        name: "haiphongnews.gov.vn",
+        url: "https://haiphongnews.gov.vn",
+        category: "tourism",
+        tagline: "",
+        description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
+      {
+        // TODO: bổ sung tagline, thời gian, vai trò, quy mô đội, phần tôi làm, công nghệ.
+        slug: "duonglamvillage",
+        name: "duonglamvillage.com",
+        url: "https://duonglamvillage.com",
+        category: "tourism",
+        tagline: "",
+        description: "Website du lịch chính thức, phối hợp phát triển cùng Sở Du lịch của tỉnh và địa phương.",
+        period: "",
+        role: "",
+        teamSize: "",
+        responsibilities: [],
+        tech: [],
+      },
     ],
   },
   experience: {
