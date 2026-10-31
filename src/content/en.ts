@@ -23,7 +23,7 @@ export const en = {
     greeting: "Hello, I’m",
     title: "Fullstack Developer",
     summary:
-      "Full-stack Developer with 4+ years of experience and 1.5+ years in Project Manager / Product Owner roles. Combines hands-on development (NestJS, Laravel, Swoole, ReactJS, Next.js) with requirement analysis, backlog management, sprint planning and team coordination. Led a 6-member team delivering high-performance tourism portal systems, and is comfortable bridging stakeholders and developers to ship quality products on schedule.",
+      "Full-stack Developer with 4+ years of experience and 1.5+ years as a Project Manager / Product Owner in Agile/Scrum teams. Combines hands-on development (NestJS, Laravel, Swoole, ReactJS, Next.js) with requirement analysis, scope and backlog management, running Scrum ceremonies (sprint planning, daily stand-ups, reviews, retrospectives) and team coordination. Led a 6-member team delivering high-performance tourism portal systems, real estate and media projects; bridges stakeholders and developers to manage scope and ship quality products on schedule.",
     openToWork: "Open to work",
     viewProjects: "View projects",
     downloadCv: "Download CV",
@@ -31,15 +31,24 @@ export const en = {
   },
   stats: [
     { value: "4+", label: "Years of experience" },
-    { value: "8", label: "Projects" },
+    { value: "9", label: "Projects" },
     { value: "1.5+", label: "Years as PM / PO" },
   ],
   projects: {
     heading: "Projects",
     subheading:
-      "Official tourism portals for provincial Departments of Tourism, plus outsourced tourism and e-commerce systems.",
-    filters: { all: "All", tourism: "Tourism portals", ecommerce: "E-commerce" },
-    categoryLabels: { tourism: "Tourism portal", ecommerce: "E-commerce" },
+      "A verified-listing real estate marketplace, official tourism portals for provincial Departments of Tourism, plus outsourced tourism and e-commerce systems.",
+    filters: {
+      all: "All",
+      tourism: "Tourism portals",
+      ecommerce: "E-commerce",
+      realestate: "Real estate",
+    },
+    categoryLabels: {
+      tourism: "Tourism portal",
+      ecommerce: "E-commerce",
+      realestate: "Real estate",
+    },
     period: "Duration",
     role: "Role",
     teamSize: "Team size",
@@ -50,8 +59,41 @@ export const en = {
     visit: "Open website",
     items: [
       {
+        slug: "nhadat247",
+        name: "nhadat247.vn",
+        url: "https://nhadat247.vn",
+        category: "realestate",
+        tagline:
+          "Verified-listing real estate marketplace: real people, real homes, real prices, real photos",
+        description:
+          "A real estate marketplace connecting brokers with buyers and renters through verified listings, with 60,000+ listings nationwide. A single Next.js + Payload CMS codebase covering the public site, broker/business tools and the admin system.",
+        period: "03/2026 – 09/2026",
+        role: "Fullstack Developer & Product Owner",
+        teamSize: "7 members",
+        responsibilities: [
+          "Analyzed business requirements, agreed scope with stakeholders, managed the backlog and ran sprints following Scrum.",
+          "Designed a single-codebase Next.js + Payload CMS + PostgreSQL architecture with a custom admin panel and RBAC.",
+          "Built the e-wallet and VietQR payments: an idempotent ledger for every balance change, negative-balance protection and a DB trigger that blocks balance writes outside the wallet service.",
+          "Built async processing with BullMQ/Redis and Payload Jobs: automated image moderation before listings go live and area price statistics.",
+          "Authentication: phone, Google and Thiên Khôi SSO sign-in; TOTP 2FA and passkeys for the admin panel; account merging; integrated OpenAI to draft listing content.",
+          "Optimized SEO and performance (SEO-friendly filter URLs, Redis caching); multi-layer testing (unit/integration/E2E/load), code reviews and post-release monitoring.",
+        ],
+        tech: [
+          "Next.js",
+          "Payload CMS",
+          "PostgreSQL",
+          "Redis",
+          "BullMQ",
+          "TailwindCSS",
+          "AWS S3",
+          "OpenAI",
+          "VietQR",
+          "Docker",
+        ],
+      },
+      {
         slug: "visitnghean",
-        name: "visitvietnams & visitnghean.gov.vn",
+        name: "visitnghean.gov.vn",
         url: "https://visitnghean.gov.vn",
         category: "tourism",
         tagline: "High-performance, SEO-optimized tourism portal system",
@@ -86,7 +128,17 @@ export const en = {
           "Implemented payment gateways (VNPay, MoMo).",
           "Integrated Google reCAPTCHA to prevent spam and bot attacks.",
         ],
-        tech: ["PHP", "HTML", "CSS", "JavaScript", "Bootstrap", "ViettelPost", "VNPay", "MoMo", "reCAPTCHA"],
+        tech: [
+          "PHP",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Bootstrap",
+          "ViettelPost",
+          "VNPay",
+          "MoMo",
+          "reCAPTCHA",
+        ],
       },
       {
         // TODO: fill in tagline, period, role, team size, what I did, tech stack.
@@ -95,7 +147,8 @@ export const en = {
         url: "https://qnta.vn",
         category: "tourism",
         tagline: "",
-        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        description:
+          "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
         period: "",
         role: "",
         teamSize: "",
@@ -109,7 +162,8 @@ export const en = {
         url: "https://dulichphutho.gov.vn",
         category: "tourism",
         tagline: "",
-        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        description:
+          "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
         period: "",
         role: "",
         teamSize: "",
@@ -123,7 +177,8 @@ export const en = {
         url: "https://dulichbacninh.gov.vn",
         category: "tourism",
         tagline: "",
-        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        description:
+          "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
         period: "",
         role: "",
         teamSize: "",
@@ -137,7 +192,8 @@ export const en = {
         url: "https://hpta.vn",
         category: "tourism",
         tagline: "",
-        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        description:
+          "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
         period: "",
         role: "",
         teamSize: "",
@@ -151,7 +207,8 @@ export const en = {
         url: "https://haiphongnews.gov.vn",
         category: "tourism",
         tagline: "",
-        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        description:
+          "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
         period: "",
         role: "",
         teamSize: "",
@@ -165,7 +222,8 @@ export const en = {
         url: "https://duonglamvillage.com",
         category: "tourism",
         tagline: "",
-        description: "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
+        description:
+          "Official tourism website built in collaboration with the provincial / local Department of Tourism.",
         period: "",
         role: "",
         teamSize: "",
@@ -188,14 +246,14 @@ export const en = {
             groups: [
               {
                 items: [
-                  "Gather and analyze business requirements and clarify them with stakeholders.",
-                  "Manage the product backlog, prioritize features, and plan development activities.",
-                  "Assign tasks, estimate effort, and track development progress.",
+                  "Gather and analyze business requirements, clarify them and agree on scope with stakeholders.",
+                  "Manage the product backlog, write user stories, prioritize features, and plan sprints following Scrum.",
+                  "Facilitate Scrum ceremonies (sprint planning, daily stand-ups, reviews, retrospectives), estimate effort, and track progress.",
                   "Develop, integrate, and optimize frontend and backend features.",
                   "Design databases, build APIs, and integrate third-party services.",
                   "Perform testing and code reviews, fix bugs, and ensure product quality.",
                   "Validate features, coordinate deployments, and monitor post-release performance.",
-                  "Collaborate with stakeholders, maintain documentation, and report project progress.",
+                  "Manage scope changes, collaborate with stakeholders, maintain documentation, and report project progress.",
                 ],
               },
             ],
@@ -266,17 +324,66 @@ export const en = {
   },
   skills: {
     heading: "Skills",
-    subheading: "Backend, frontend and delivery tooling used across tourism portals and e-commerce systems.",
+    subheading:
+      "Technologies used in production across a real estate marketplace, tourism portals and e-commerce systems.",
     groups: [
-      { name: "Backend", items: ["Swoole", "PHP (Laravel)", "NestJS", "Redis", "BullMQ"] },
+      {
+        name: "Backend",
+        icon: "/icons/server.svg",
+        items: ["PHP", "Laravel", "Swoole", "NestJS", "Payload CMS", "BullMQ"],
+      },
       {
         name: "Frontend",
-        items: ["HTML5", "CSS3", "JavaScript", "ReactJS", "Bootstrap", "Tailwind CSS", "NextJS", "TanStack Query", "Zustand"],
+        icon: "/icons/monitor-smartphone.svg",
+        items: [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "TypeScript",
+          "ReactJS",
+          "Next.js",
+          "Tailwind CSS",
+          "Bootstrap",
+          "Shadcn/ui",
+          "TanStack Query",
+          "Zustand",
+        ],
       },
-      { name: "Database", items: ["MySQL", "PostgreSQL"] },
-      { name: "Cloud & Storage", items: ["AWS S3"] },
-      { name: "DevOps & Environment", items: ["Docker"] },
-      { name: "Version Control & Tools", items: ["Git", "GitHub", "Office tools"] },
+      {
+        name: "Database & Cache",
+        icon: "/icons/database.svg",
+        items: ["MySQL", "PostgreSQL", "Redis"],
+      },
+      {
+        name: "Payments & Integrations",
+        icon: "/icons/credit-card.svg",
+        items: [
+          "VietQR",
+          "VNPay",
+          "MoMo",
+          "ViettelPost",
+          "OpenAI",
+          "Google Maps",
+          "Zalo Live Chat",
+          "Google reCAPTCHA",
+        ],
+      },
+      {
+        name: "Auth & Security",
+        icon: "/icons/shield-check.svg",
+        items: ["OAuth (Google)", "2FA TOTP", "Passkey (WebAuthn)", "RBAC"],
+      },
+      {
+        name: "Testing & Monitoring",
+        icon: "/icons/activity.svg",
+        items: ["Vitest", "Playwright", "k6", "Sentry"],
+      },
+      { name: "Cloud & DevOps", icon: "/icons/cloud.svg", items: ["AWS S3", "Docker"] },
+      {
+        name: "Version Control & Tools",
+        icon: "/icons/git-branch.svg",
+        items: ["Git", "GitHub", "GitLab", "Office tools"],
+      },
     ],
     educationHeading: "Education",
     education: {
@@ -286,7 +393,7 @@ export const en = {
     },
   },
   cta: {
-    heading: "Have a project or an open role? Let’s talk!",
+    heading: "Have a project or an open role?\nLet’s talk!",
     body: "I’m open to Fullstack Developer and Project Manager / Product Owner opportunities.",
     button: "Get in touch",
   },

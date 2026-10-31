@@ -20,7 +20,7 @@ export function homeHref(dict: Dictionary) {
 export function Header({ dict }: { dict: Dictionary }) {
   const otherLocaleHref = dict.locale === "vi" ? "/en" : "/";
   const linkClass =
-    "px-4 py-3 text-body font-medium text-fg-soft transition-colors hover:text-primary-500 xl:px-6";
+    "px-4 py-3 text-body font-medium text-fg-soft transition duration-300 hover:text-primary-500 xl:px-6";
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/0 shadow-[0_4px_20px_rgb(28_25_25/0.06)] bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/75">
@@ -51,13 +51,20 @@ export function Header({ dict }: { dict: Dictionary }) {
         </nav>
 
         <div className="flex items-center gap-1 lg:hidden">
+          <a
+            href={otherLocaleHref}
+            hrefLang={dict.locale === "vi" ? "en" : "vi"}
+            aria-label={dict.nav.switchLangLabel}
+            className="grid h-12 min-w-12 place-items-center rounded-md px-2 text-body font-medium text-fg-soft transition duration-300 hover:bg-tint hover:text-primary-500"
+          >
+            {dict.nav.switchLang}
+          </a>
           <ThemeToggle label={dict.nav.toggleTheme} />
           <MobileMenu
             links={[
               ...navLinks(dict),
               { href: "#contact", label: dict.nav.contact },
               { href: profile.cvPath, label: dict.nav.downloadCv, download: true },
-              { href: otherLocaleHref, label: dict.nav.switchLangLabel },
             ]}
             openLabel={dict.nav.openMenu}
             closeLabel={dict.nav.closeMenu}

@@ -22,7 +22,7 @@ export function ButtonLink({
 }: Props) {
   return (
     <a
-      className={`inline-flex h-12 shrink-0 items-center justify-center gap-3 rounded-[6px] px-6 text-body font-semibold whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 ${variants[variant]} ${className}`}
+      className={`inline-flex h-12 shrink-0 items-center justify-center gap-3 rounded-[6px] px-6 text-body font-semibold whitespace-nowrap transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 ${variants[variant]} ${className}`}
       {...rest}
     >
       {children}

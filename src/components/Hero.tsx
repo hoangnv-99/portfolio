@@ -10,15 +10,18 @@ export function Hero({ dict }: { dict: Dictionary }) {
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 opacity-100 dark:opacity-40"
       >
-        <div className="absolute -top-64 -right-48 size-[870px] rounded-full bg-[radial-gradient(circle,rgb(218_77_241/0.256),transparent_65%)]" />
-        <div className="absolute top-80 -right-96 size-[1044px] rounded-full bg-[radial-gradient(circle,rgb(196_245_233/0.448),transparent_65%)]" />
+        <div className="absolute -top-64 -right-48 size-[870px] rounded-full bg-[radial-gradient(circle,rgb(225_29_72/0.16),transparent_65%)]" />
+        <div className="absolute top-80 -right-96 size-[1044px] rounded-full bg-[radial-gradient(circle,rgb(255_214_200/0.45),transparent_65%)]" />
         <div className="absolute top-[420px] -left-40 h-[226px] w-[540px] -rotate-[30deg] rounded-full bg-[radial-gradient(ellipse,rgb(255_223_168/0.576),transparent_70%)]" />
       </div>
 
-      <div className="container-page grid items-center gap-12 pt-10 pb-20 lg:grid-cols-[minmax(0,648px)_minmax(0,536px)] lg:min-h-[calc(100svh-96px)] lg:justify-between lg:py-10">
+      <div className="container-page grid items-center gap-12 pt-10 pb-14 lg:grid-cols-[minmax(0,648px)_minmax(0,536px)] lg:min-h-[calc(100svh-96px)] lg:justify-between lg:py-10">
         <div className="flex flex-col gap-6 lg:gap-5">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-tint px-4 py-1.5 text-small font-medium text-primary-500">
-            <span className="size-2 rounded-full bg-primary-500" />
+          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-4 py-1.5 text-small font-medium text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-500/30">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-500 opacity-75 motion-reduce:hidden" />
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+            </span>
             {dict.hero.openToWork}
           </span>
           <h1 className="text-[40px] leading-[48px] font-semibold text-fg md:text-[56px] md:leading-[64px] xl:text-display xl:leading-[84px]">
@@ -42,7 +45,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
                 className={`flex flex-1 flex-col-reverse gap-2 px-2 text-center ${i > 0 ? "border-l border-white dark:border-line" : ""}`}
               >
                 <dt className="text-small text-subtle md:text-body">{stat.label}</dt>
-                <dd className="text-[24px] leading-8 font-semibold text-fg-soft md:text-h3">
+                <dd className="text-[24px] leading-8 font-semibold text-accent md:text-h3">
                   {stat.value}
                 </dd>
               </div>

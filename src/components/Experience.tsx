@@ -3,7 +3,7 @@ import { SectionHeading } from "./ui/SectionHeading";
 
 export function Experience({ dict }: { dict: Dictionary }) {
   return (
-    <section id="experience" className="bg-bg-alt py-14 lg:py-20">
+    <section id="experience" className="bg-bg-alt py-10 lg:py-20">
       <div className="container-page grid gap-10 lg:grid-cols-[minmax(0,529px)_minmax(0,648px)] lg:justify-between">
         <div className="lg:sticky lg:top-40 lg:self-start">
           <SectionHeading
@@ -18,11 +18,11 @@ export function Experience({ dict }: { dict: Dictionary }) {
             <li
               key={job.company}
               data-reveal
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-[6px] bg-surface p-6 transition-shadow hover:shadow-card-lg md:p-8"
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-[6px] bg-surface p-6 transition duration-300 hover:shadow-card-lg md:p-8"
             >
               <span
                 aria-hidden
-                className="absolute inset-y-0 left-0 w-[5px] bg-primary-500 opacity-0 transition-opacity group-hover:opacity-100"
+                className="absolute inset-y-0 left-0 w-[5px] bg-primary-500 opacity-0 transition duration-300 group-hover:opacity-100"
               />
               <div className="flex flex-col gap-2">
                 <h3 className="text-[20px] leading-7 font-semibold text-fg md:text-h4 md:leading-8">

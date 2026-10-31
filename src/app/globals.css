@@ -6,9 +6,9 @@
 @theme {
   --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary-500: #a53dff;
-  --color-primary-900: #210c33;
-  --color-primary-tint: rgb(237 216 255 / 0.5);
+  /* Brand colors customised to match the avatar (burgundy + gold), not from Picto */
+  --color-primary-900: #2a0a10;
+  --color-primary-tint: rgb(251 220 225 / 0.5);
 
   --color-gray-50: #f0f1f3;
   --color-gray-100: #e6e8eb;
@@ -58,6 +58,8 @@
   --muted: var(--color-gray-600);
   --subtle: var(--color-gray-400);
   --line: var(--color-gray-100);
+  --primary: #b3122e;
+  --accent: #a16207;
   --tint: var(--color-primary-tint);
   --band: var(--color-gray-900);
   --footer: var(--color-gray-800);
@@ -72,13 +74,17 @@
   --muted: var(--color-gray-300);
   --subtle: var(--color-gray-400);
   --line: var(--color-gray-700);
-  --tint: rgb(165 61 255 / 0.16);
+  --primary: #e11d48;
+  --accent: #e5b85c;
+  --tint: rgb(225 29 72 / 0.16);
   --band: var(--color-gray-800);
   --footer: #0e1a2c;
   color-scheme: dark;
 }
 
 @theme inline {
+  --color-primary-500: var(--primary);
+  --color-accent: var(--accent);
   --color-bg: var(--bg);
   --color-bg-alt: var(--bg-alt);
   --color-surface: var(--surface);
@@ -106,7 +112,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  /* = sticky header height incl. its 1px border-b (h-[72px] / lg:h-24) */
+  scroll-padding-top: 73px;
+  @media (width >= 64rem) {
+    scroll-padding-top: 97px;
+  }
 }
 
 body {

@@ -6,7 +6,6 @@ import { Icon } from "./ui/Icon";
 export function Contact({ dict }: { dict: Dictionary }) {
   const { labels } = dict.contact;
   const cards = [
-    { icon: "/figma/location-pin.svg", label: labels.address, value: dict.contact.address },
     { icon: "/icons/calendar.svg", label: labels.birthday, value: profile.birthday },
     {
       icon: "/figma/phone-call.svg",
@@ -20,10 +19,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
       value: profile.email,
       href: `mailto:${profile.email}`,
     },
+    { icon: "/figma/location-pin.svg", label: labels.address, value: dict.contact.address },
   ];
 
   return (
-    <section id="contact" className="py-14 lg:py-20">
+    <section id="contact" className="py-10 lg:py-20">
       <div className="container-page">
         <div
           data-reveal
@@ -52,15 +52,18 @@ export function Contact({ dict }: { dict: Dictionary }) {
               return (
                 <li
                   key={card.label}
-                  className="group flex items-center gap-[13px] rounded-[10px] bg-surface p-6 transition-shadow hover:shadow-card dark:hover:bg-bg-alt"
+                  className="group flex items-center gap-[13px] rounded-[10px] bg-surface p-6 transition duration-300 hover:shadow-card dark:hover:bg-bg-alt"
                 >
-                  <span className="rounded-[6px] bg-tint p-3 text-primary-500 transition-colors group-hover:bg-primary-500 group-hover:text-white">
+                  <span className="rounded-[6px] bg-tint px-3 py-2.25 text-primary-500 transition duration-300 group-hover:bg-primary-500 group-hover:text-white">
                     <Icon src={card.icon} />
                   </span>
                   <span className="flex min-w-0 flex-col gap-1">
                     <span className="text-small text-fg-soft">{card.label}</span>
                     {card.href ? (
-                      <a href={card.href} className={`${valueClass} hover:text-primary-500`}>
+                      <a
+                        href={card.href}
+                        className={`${valueClass} transition duration-300 hover:text-primary-500`}
+                      >
                         {card.value}
                       </a>
                     ) : (

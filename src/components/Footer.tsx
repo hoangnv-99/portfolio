@@ -12,7 +12,7 @@ export function Footer({ dict }: { dict: Dictionary }) {
             <a
               key={link.href}
               href={link.href}
-              className="p-3 text-body text-gray-50 hover:text-primary-500"
+              className="p-3 text-body text-gray-50 transition duration-300 hover:text-primary-500"
             >
               {link.label}
             </a>

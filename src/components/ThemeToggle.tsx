@@ -16,7 +16,7 @@ export function ThemeToggle({ label }: { label: string }) {
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="grid size-12 place-items-center rounded-[6px] text-fg-soft transition-colors hover:bg-tint hover:text-primary-500"
+      className="grid size-12 place-items-center rounded-[6px] text-fg-soft transition duration-300 hover:bg-tint hover:text-primary-500"
     >
       <svg
         className="size-6 dark:hidden"

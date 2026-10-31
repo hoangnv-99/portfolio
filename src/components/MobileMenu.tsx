@@ -23,7 +23,7 @@ export function MobileMenu({
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? closeLabel : openLabel}
-        className="grid size-12 place-items-center rounded-[6px] text-fg transition-colors hover:bg-tint"
+        className="grid size-12 place-items-center rounded-[6px] text-fg transition duration-300 hover:bg-tint"
       >
         <svg
           className="size-6"
@@ -48,7 +48,7 @@ export function MobileMenu({
               href={link.href}
               download={link.download}
               onClick={() => setOpen(false)}
-              className="block border-b border-line py-4 text-body font-medium text-fg-soft last:border-0 hover:text-primary-500"
+              className="block border-b border-line py-4 text-body font-medium text-fg-soft last:border-0 transition duration-300 hover:text-primary-500"
             >
               {link.label}
             </a>

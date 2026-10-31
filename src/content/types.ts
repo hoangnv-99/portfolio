@@ -1,6 +1,6 @@
 export type Locale = "vi" | "en";
 
-export type ProjectCategory = "tourism" | "ecommerce";
+export type ProjectCategory = "tourism" | "ecommerce" | "realestate";
 
 export type Project = {
   slug: string;
@@ -78,7 +78,7 @@ export type Dictionary = {
   skills: {
     heading: string;
     subheading: string;
-    groups: { name: string; items: string[] }[];
+    groups: { name: string; icon: string; items: string[] }[];
     educationHeading: string;
     education: { school: string; major: string; details: string[] };
   };
