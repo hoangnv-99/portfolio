@@ -1,5 +1,5 @@
 // One-off: captures the live project sites used as card thumbnails.
-// Usage: pnpm screenshots   (uses the locally installed Google Chrome)
+// Usage: pnpm screenshots [slug]   (uses the locally installed Google Chrome; slug limits it to one project)
 import { chromium } from "playwright";
 import { en } from "../src/content/en.ts";
 
@@ -8,7 +8,10 @@ const outDir = new URL("../public/projects/", import.meta.url).pathname;
 const browser = await chromium.launch({ channel: "chrome" });
 const page = await browser.newPage({ viewport: { width: 1440, height: 844 }, deviceScaleFactor: 1 });
 
+const only = process.argv[2];
+
 for (const project of en.projects.items) {
+  if (only && project.slug !== only) continue;
   try {
     await page.goto(project.url, { waitUntil: "load", timeout: 60_000 });
     await page.waitForTimeout(3_000);

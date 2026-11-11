@@ -9,7 +9,7 @@ import { ButtonLink } from "./ui/ButtonLink";
 
 type Filter = "all" | ProjectCategory;
 type Labels = Dictionary["projects"];
-const filters: Filter[] = ["all", "tourism", "ecommerce", "realestate"];
+const filters: Filter[] = ["all", "tourism", "ecommerce", "realestate", "media"];
 const CARD_TECH_LIMIT = 3;
 
 export function ProjectGrid({ labels }: { labels: Labels }) {

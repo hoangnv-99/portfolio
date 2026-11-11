@@ -31,7 +31,7 @@ export const vi = {
   },
   stats: [
     { value: "4+", label: "Năm kinh nghiệm" },
-    { value: "9", label: "Dự án" },
+    { value: "10", label: "Dự án" },
     { value: "1.5+", label: "Năm làm PM / PO" },
   ],
   projects: {
@@ -42,11 +42,13 @@ export const vi = {
       tourism: "Cổng du lịch",
       ecommerce: "Thương mại điện tử",
       realestate: "Bất động sản",
+      media: "Truyền thông / Sự kiện",
     },
     categoryLabels: {
       tourism: "Cổng du lịch",
       ecommerce: "Thương mại điện tử",
       realestate: "Bất động sản",
+      media: "Truyền thông / Sự kiện",
     },
     period: "Thời gian",
     role: "Vai trò",
@@ -58,6 +60,46 @@ export const vi = {
     visit: "Mở trang web",
     items: [
       {
+        slug: "netfoto",
+        name: "NetSpace Foto",
+        url: "https://foto.netspace.vn",
+        category: "media",
+        tagline: "Hệ thống ảnh sự kiện: tìm lại mọi bức ảnh của mình chỉ với một tấm selfie",
+        description:
+          "Nền tảng ảnh sự kiện: ban tổ chức tạo album, mời nhiếp ảnh gia tải ảnh trực tiếp lên S3; hệ thống tự nhận diện khuôn mặt, đóng watermark, còn người tham dự tìm ảnh của mình bằng một tấm selfie (không được lưu lại). Monorepo gồm 4 ứng dụng: web công khai, CMS, API và dịch vụ ML.",
+        period: "10/2026 – nay",
+        role: "Fullstack Developer",
+        teamSize: "3 thành viên",
+        responsibilities: [
+          "Tìm ảnh bằng selfie: SCRFD phát hiện khuôn mặt + vector ArcFace 512 chiều, so khớp cosine trong RAM.",
+          "Pipeline tải ảnh nhiều bước: presigned POST thẳng lên S3, hàng đợi BullMQ ưu tiên xen kẽ theo sự kiện, worker gọi ML service (xoay EXIF, tạo preview, watermark mặc định/tuỳ chỉnh/khung), phân phối WebP qua imgproxy có ký URL.",
+          "Trang sự kiện công khai: gallery + lightbox, ảnh nổi bật, chế độ Công khai/Mật khẩu/Ẩn, tải nhiều ảnh nén ZIP ngay trên trình duyệt, xử lý trình duyệt trong ứng dụng (Zalo/Facebook), tự hết hạn (HTTP 410) và dọn dữ liệu sau 30 ngày.",
+          "CMS quản trị: quản lý sự kiện và ảnh, mời người tải ảnh qua email, trình chỉnh watermark, phân quyền hiển thị (người dùng chỉ thấy sự kiện của mình và được mời; admin có thêm billing và quản lý tài khoản).",
+          "Gói dịch vụ và thanh toán: quota/hạn dùng tính từ lịch sử cấp gói với webhook SePay (HMAC) và đối soát ngân hàng idempotent, form tư vấn gửi mail cho kinh doanh.",
+        ],
+        tech: [
+          "React",
+          "Next.js",
+          "NestJS",
+          "FastAPI",
+          "Python",
+          "PostgreSQL",
+          "Prisma",
+          "Redis",
+          "BullMQ",
+          "TailwindCSS",
+          "shadcn/ui",
+          "TanStack Query",
+          "Better Auth",
+          "InsightFace (ONNX)",
+          "AWS S3",
+          "imgproxy",
+          "SePay",
+          "Brevo",
+          "Docker",
+        ],
+      },
+      {
         slug: "nhadat247",
         name: "nhadat247.vn",
         url: "https://nhadat247.vn",
@@ -65,7 +107,7 @@ export const vi = {
         tagline: "Sàn bất động sản tin đăng xác thực: Người thật – Nhà thật – Giá thật – Ảnh thật",
         description:
           "Sàn thương mại điện tử bất động sản kết nối môi giới với người mua, người thuê qua tin đăng đã xác thực, với hơn 60.000 tin trên toàn quốc. Một codebase Next.js + Payload CMS gồm cả trang người dùng, công cụ cho môi giới/doanh nghiệp và hệ thống quản trị.",
-        period: "03/2026 – 09/2026",
+        period: "03/2026 – 10/2026",
         role: "Fullstack Developer & Product Owner",
         teamSize: "6 thành viên",
         responsibilities: [
@@ -237,7 +279,7 @@ export const vi = {
     items: [
       {
         company: "Công ty Cổ phần Công nghệ & Truyền thông Digital Space",
-        period: "03/2026 – 09/2026",
+        period: "03/2026 – 10/2026",
         roles: [
           {
             title: "Developer + Product Owner",
@@ -328,7 +370,18 @@ export const vi = {
       {
         name: "Backend",
         icon: "/icons/server.svg",
-        items: ["PHP", "Laravel", "Swoole", "NestJS", "Payload CMS", "BullMQ"],
+        items: [
+          "PHP",
+          "Laravel",
+          "Swoole",
+          "NestJS",
+          "Python",
+          "FastAPI",
+          "Prisma",
+          "Payload CMS",
+          "BullMQ",
+          "InsightFace (ONNX)",
+        ],
       },
       {
         name: "Frontend",
@@ -357,10 +410,12 @@ export const vi = {
         icon: "/icons/credit-card.svg",
         items: [
           "VietQR",
+          "SePay",
           "VNPay",
           "MoMo",
           "ViettelPost",
           "OpenAI",
+          "Brevo",
           "Google Maps",
           "Zalo Live Chat",
           "Google reCAPTCHA",
@@ -369,14 +424,20 @@ export const vi = {
       {
         name: "Xác thực & Bảo mật",
         icon: "/icons/shield-check.svg",
-        items: ["OAuth (Google)", "2FA TOTP", "Passkey (WebAuthn)", "RBAC"],
+        items: [
+          "Better Auth (Email OTP)",
+          "OAuth (Google)",
+          "2FA TOTP",
+          "Passkey (WebAuthn)",
+          "RBAC",
+        ],
       },
       {
         name: "Kiểm thử & Giám sát",
         icon: "/icons/activity.svg",
         items: ["Vitest", "Playwright", "k6", "Sentry"],
       },
-      { name: "Cloud & DevOps", icon: "/icons/cloud.svg", items: ["AWS S3", "Docker"] },
+      { name: "Cloud & DevOps", icon: "/icons/cloud.svg", items: ["AWS S3", "imgproxy", "Docker"] },
       {
         name: "Quản lý mã nguồn & Công cụ",
         icon: "/icons/git-branch.svg",
