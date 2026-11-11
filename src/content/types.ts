@@ -1,6 +1,6 @@
 export type Locale = "vi" | "en";
 
-export type ProjectCategory = "tourism" | "ecommerce" | "realestate";
+export type ProjectCategory = "tourism" | "ecommerce" | "realestate" | "media";
 
 export type Project = {
   slug: string;

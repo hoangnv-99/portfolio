@@ -31,7 +31,7 @@ export const en = {
   },
   stats: [
     { value: "4+", label: "Years of experience" },
-    { value: "9", label: "Projects" },
+    { value: "10", label: "Projects" },
     { value: "1.5+", label: "Years as PM / PO" },
   ],
   projects: {
@@ -43,11 +43,13 @@ export const en = {
       tourism: "Tourism portals",
       ecommerce: "E-commerce",
       realestate: "Real estate",
+      media: "Media / Event photos",
     },
     categoryLabels: {
       tourism: "Tourism portal",
       ecommerce: "E-commerce",
       realestate: "Real estate",
+      media: "Media / Event photos",
     },
     period: "Duration",
     role: "Role",
@@ -59,6 +61,46 @@ export const en = {
     visit: "Open website",
     items: [
       {
+        slug: "netfoto",
+        name: "NetSpace Foto",
+        url: "https://foto.netspace.vn",
+        category: "media",
+        tagline: "Event photo system: find all your photos with a single selfie",
+        description:
+          "An event photo platform: organizers create albums and invite photographers to upload straight to S3, the system detects faces and applies watermarks automatically, and attendees find their own photos by uploading a selfie (never stored). A monorepo of four apps: public web, CMS, API and an ML service.",
+        period: "10/2026 – present",
+        role: "Fullstack Developer",
+        teamSize: "3 members",
+        responsibilities: [
+          "Selfie search: SCRFD face detection + 512-dim ArcFace vectors, in-memory cosine matching.",
+          "Multi-step upload pipeline: presigned POST straight to S3, BullMQ queue with priorities interleaved per event, a worker calling the ML service (EXIF rotation, previews, default/custom/frame watermarks), WebP delivery via signed imgproxy URLs.",
+          "Public event page: gallery with lightbox, featured photos, Public/password/hidden access modes, in-browser ZIP download, in-app browser (Zalo/Facebook) handling, auto-expiry (HTTP 410) and data purge after 30 days.",
+          "CMS admin: event and photo management, uploader invites by email, a watermark editor, and role-based visibility (users see only their own and invited events; admins additionally get billing and account management).",
+          "Packages and payments: quota and expiry derived by replaying grant history, SePay webhook (HMAC) and idempotent bank reconciliation, a consultation form that emails sales.",
+        ],
+        tech: [
+          "React",
+          "Next.js",
+          "NestJS",
+          "FastAPI",
+          "Python",
+          "PostgreSQL",
+          "Prisma",
+          "Redis",
+          "BullMQ",
+          "TailwindCSS",
+          "shadcn/ui",
+          "TanStack Query",
+          "Better Auth",
+          "InsightFace (ONNX)",
+          "AWS S3",
+          "imgproxy",
+          "SePay",
+          "Brevo",
+          "Docker",
+        ],
+      },
+      {
         slug: "nhadat247",
         name: "nhadat247.vn",
         url: "https://nhadat247.vn",
@@ -67,7 +109,7 @@ export const en = {
           "Verified-listing real estate marketplace: real people, real homes, real prices, real photos",
         description:
           "A real estate marketplace connecting brokers with buyers and renters through verified listings, with 60,000+ listings nationwide. A single Next.js + Payload CMS codebase covering the public site, broker/business tools and the admin system.",
-        period: "03/2026 – 09/2026",
+        period: "03/2026 – 10/2026",
         role: "Fullstack Developer & Product Owner",
         teamSize: "7 members",
         responsibilities: [
@@ -239,7 +281,7 @@ export const en = {
     items: [
       {
         company: "Digital Space Technology & Communications Joint Stock Company",
-        period: "03/2026 – 09/2026",
+        period: "03/2026 – 10/2026",
         roles: [
           {
             title: "Programming Technician + Product Owner",
@@ -330,7 +372,18 @@ export const en = {
       {
         name: "Backend",
         icon: "/icons/server.svg",
-        items: ["PHP", "Laravel", "Swoole", "NestJS", "Payload CMS", "BullMQ"],
+        items: [
+          "PHP",
+          "Laravel",
+          "Swoole",
+          "NestJS",
+          "Python",
+          "FastAPI",
+          "Prisma",
+          "Payload CMS",
+          "BullMQ",
+          "InsightFace (ONNX)",
+        ],
       },
       {
         name: "Frontend",
@@ -359,10 +412,12 @@ export const en = {
         icon: "/icons/credit-card.svg",
         items: [
           "VietQR",
+          "SePay",
           "VNPay",
           "MoMo",
           "ViettelPost",
           "OpenAI",
+          "Brevo",
           "Google Maps",
           "Zalo Live Chat",
           "Google reCAPTCHA",
@@ -371,14 +426,20 @@ export const en = {
       {
         name: "Auth & Security",
         icon: "/icons/shield-check.svg",
-        items: ["OAuth (Google)", "2FA TOTP", "Passkey (WebAuthn)", "RBAC"],
+        items: [
+          "Better Auth (Email OTP)",
+          "OAuth (Google)",
+          "2FA TOTP",
+          "Passkey (WebAuthn)",
+          "RBAC",
+        ],
       },
       {
         name: "Testing & Monitoring",
         icon: "/icons/activity.svg",
         items: ["Vitest", "Playwright", "k6", "Sentry"],
       },
-      { name: "Cloud & DevOps", icon: "/icons/cloud.svg", items: ["AWS S3", "Docker"] },
+      { name: "Cloud & DevOps", icon: "/icons/cloud.svg", items: ["AWS S3", "imgproxy", "Docker"] },
       {
         name: "Version Control & Tools",
         icon: "/icons/git-branch.svg",
